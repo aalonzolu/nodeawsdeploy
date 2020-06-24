@@ -5,6 +5,6 @@ RUN apk add --no-cache bash git openssh  \
 			 zip unzip p7zip
 RUN pip install awscli
 ADD ./enablessh.sh /usr/sbin/enablessh
-ADD ./ssh_config ~/.ssh/config
+ADD ./ssh_config ~/ssh_config
 RUN chmod +x /usr/sbin/enablessh 
-RUN chmod 400 ~/.ssh/config
+RUN chmod 400 ~/ssh_config
