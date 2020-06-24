@@ -2,8 +2,17 @@
 eval $(ssh-agent -s)
 mkdir -p ~/.ssh
 chmod 700 ~/.ssh
-echo $1;
+echo "$1";
 echo "echoed key"
+
+if [[ -z "${SSH_PRIVATE_KEY}" ]]; then
+  echo "no ssh key provided"
+  MY_SCRIPT_VARIABLE="Some default value because DEPLOY_ENV is undefined"
+else
+  echo  "ssh key exist"
+  MY_SCRIPT_VARIABLE="${DEPLOY_ENV}"
+fi
+
 if [ -z "$1" ]
   then
     echo "No ssh key spesified, generating..."
