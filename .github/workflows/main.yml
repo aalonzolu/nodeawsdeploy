@@ -31,3 +31,4 @@ jobs:
         password: ${{ secrets.DOCKER_PASSWORD }}
         # Docker repository to tag the image with
         repository: aalonzolu/nodeawsdeploy
+        tags: latest
