@@ -6,19 +6,11 @@ echo "$1";
 echo "echoed key"
 
 if [[ -z "${SSH_PRIVATE_KEY}" ]]; then
-  echo "no ssh key provided"
-  MY_SCRIPT_VARIABLE="Some default value because DEPLOY_ENV is undefined"
+  echo "no ssh key provided, generating"
+  HOSTNAME=`hostname` ssh-keygen -t rsa -C "$HOSTNAME" -f "$HOME/.ssh/id_rsa" -P "" && cat ~/.ssh/id_rsa.pub
 else
   echo  "ssh key exist"
-  MY_SCRIPT_VARIABLE="${DEPLOY_ENV}"
-fi
-
-if [ -z "$1" ]
-  then
-    echo "No ssh key spesified, generating..."
-    HOSTNAME=`hostname` ssh-keygen -t rsa -C "$HOSTNAME" -f "$HOME/.ssh/id_rsa" -P "" && cat ~/.ssh/id_rsa.pub
-  else
-    echo "$1" >~/.ssh/id_rsa
+    echo "$SSH_PRIVATE_KEY" >~/.ssh/id_rsa
     echo "Key loaded"
     chmod 600 ~/.ssh/id_rsa
     ls -lah ~/.ssh
