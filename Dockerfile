@@ -4,5 +4,5 @@ RUN apk add --no-cache bash git openssh  \
 			 python-dev py-pip python2 \
 			 zip unzip p7zip
 RUN pip install awscli
-ADD ./enablessh.sh /usr/bin/enablessh
-RUN chmod +x /usr/bin/enablessh
+ADD ./enablessh.sh /usr/sbin/enablessh
+RUN chmod +x /usr/sbin/enablessh
