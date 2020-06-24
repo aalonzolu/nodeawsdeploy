@@ -1,6 +1,7 @@
 eval $(ssh-agent -s)
 mkdir -p ~/.ssh
 chmod 700 ~/.ssh
+echo $1;
 if [ -z "$1" ]
   then
     echo "No ssh key spesified, generating..."
