@@ -31,5 +31,3 @@ jobs:
         password: ${{ secrets.DOCKER_PASSWORD }}
         # Docker repository to tag the image with
         repository: aalonzolu/nodeawsdeploy
-        # Comma-delimited list of tags. These will be added to the registry/repository to form the image's tags
-        tags: aws,node,beanstalk,s3,deploy
