@@ -1,4 +1,4 @@
-# Node AWS Deploy
+# Node AWS Deploy to Elastic Beanstalk
 ![CI](https://github.com/aalonzolu/nodeawsdeploy/workflows/CI/badge.svg?branch=master)
 
 # Docker Image
