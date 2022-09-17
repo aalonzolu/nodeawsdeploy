@@ -37,5 +37,5 @@ Required environment variables:
 - AWS_ENV_NAME
 - AWS_APP_S3
 
-.gitlab-ci.yml example:
+# .gitlab-ci.yml example:
 https://gist.github.com/aalonzolu/e5098cb7d2858018ce964b1a796bc599
